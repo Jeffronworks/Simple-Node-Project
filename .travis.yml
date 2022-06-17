@@ -16,7 +16,7 @@ before_script:
 script:
   - docker --version # just to print out the docker version used
   - docker build -t simple-node .
-  - docket tag simple-node jeffron/simple-node:latest
+  - docker tag simple-node jeffron/simple-node:latest
 
 after_success:
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME"  --password-stdin
